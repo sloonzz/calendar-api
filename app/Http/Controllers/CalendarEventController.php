@@ -42,8 +42,8 @@ class CalendarEventController extends Controller
         if ($validator->fails()) {
             return new ApiResponse($validator->errors(), 'error', 400);
         }
-        try {
 
+        try {
             $existingCalendarEvents = CalendarEvent::all();
             foreach ($existingCalendarEvents as $event) {
                 $event->delete();
@@ -62,16 +62,5 @@ class CalendarEventController extends Controller
         } 
             
         return new ApiResponse($savedCalendarEvents);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\CalendarEvent  $calendarEvent
-     * @return \Illuminate\Http\Response
-     */
-    public function show(CalendarEvent $calendarEvent)
-    {
-        //
     }
 }
