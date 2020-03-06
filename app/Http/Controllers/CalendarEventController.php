@@ -58,7 +58,7 @@ class CalendarEventController extends Controller
                 $savedCalendarEvents[] = $calendarEvent;
             }
         } catch (Exception $e) {
-            return new ApiResponse('Something went wrong on our side. Please try again.', 'error', 500);
+            return new ApiResponse('Something went wrong. Please try again.', 'error', 500);
         } 
             
         return new ApiResponse($savedCalendarEvents);
